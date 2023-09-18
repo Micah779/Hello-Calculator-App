@@ -31,11 +31,11 @@ enum CalcButton: String {
     var buttonColor: Color {
         switch self {
         case .add, .subtract, .multiply, .divide, .equal:
-            return .orange
+            return Color(.black)
         case .clear, .negative, .percent:
-            return Color(.lightGray)
+            return Color(UIColor(red: 100.0, green: 55/250.0, blue: 55/90.0, alpha: 1))
         default:
-            return Color(UIColor(red: 55/255.0, green: 55/255.0, blue: 55/255.0, alpha: 1))
+            return Color(UIColor(red: 100.0, green: 55/120.0, blue: 55/60.0, alpha: 1))
         }
     }
 }
@@ -61,18 +61,30 @@ struct ContentView: View {
     var body: some View {
         // Black background
         ZStack {
-            Color.black.edgesIgnoringSafeArea(.all)
+            Image("hello-kitty-wallpaper-3-o")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .edgesIgnoringSafeArea(.all)
             
             VStack {
                 Spacer()
                 // Text display
-                HStack {
+                ZStack (alignment: .trailing) {
                     Spacer()
+                    
+                    Rectangle()
+                      .foregroundColor(.white)
+                      .frame(height: 90)
+                      .opacity(0.2)
+                    
                     Text(value)
                         .bold()
                         .font(.system(size: 100))
-                        .foregroundColor(.white)
+                        .frame(height: 100)
+                        .foregroundColor(.black)
+                        .frame(maxWidth: .infinity)
                 }
+                .alignmentGuide(.trailing, computeValue: { $0[.trailing] })
                 .padding()
                 
                 // Buttons
