@@ -4,6 +4,8 @@ Hello Calculator App 📱
 
     Even though I'm new to Swift, I'm learning as I go using tutorials and documentation. This is my first Swift project, so it's a great way to get hands-on experience with the language.
 
+<img src="hellocalc.png" alt="App screenshot" width="200">
+
 Features
 
     Cute Hello Kitty theme with pink background and icons
